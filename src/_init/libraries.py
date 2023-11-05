@@ -8,4 +8,4 @@ import random
 
 import matplotlib
 import matplotlib.pyplot as plt
-import seaborn
+import seaborn as sns
