@@ -2,13 +2,12 @@ from src._init._init import *
 
 
 class cleaning_machine:
-    def __init__(self, df) -> None:
-        self.df = df
-
-        if type(df) == pl.DataFrame:
-            self.type = "polars"
-        elif type(df) == pd.DataFrame:
-            self.type = "pandas"
+    def __init__(self) -> None:
+        self.with_df = False
+        self.df = None
+        self.diagnosis = (
+            "No diagnostic has been run yet. Please use .run_diagnosis() method first"
+        )
 
         self.options = {}
 
