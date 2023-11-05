@@ -21,6 +21,25 @@ class cleaning_machine:
     def __repr__(self) -> pl.DataFrame:
         return repr(self.options)
 
+    def add_df(self, df) -> None:
+        """Add dataframe to the washing machine.
+
+        Args:
+            df (pl.DataFrame|pd.DataFrame): The dataframe, either polars or pandas.
+
+        """
+        if type(df) == pd.DataFrame:
+            df = pl.DataFrame(df)
+            self.type = "pandas"
+        elif type(df) == pl.DataFrame:
+            self.type = "polars"
+        assert (
+            type(df) == pl.DataFrame
+        ), "Only polars or pandas df are supported at the moment."
+        self.df = df
+        self.with_df = True
+        return self
+
     def update_options(self, heat=None):
         for i in self.options.keys():
             if locals()[i] != None:
