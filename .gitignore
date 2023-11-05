@@ -1,3 +1,9 @@
+# Specific
+.vscode/*
+*.csv
+*.xlsx
+*.parquet
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
