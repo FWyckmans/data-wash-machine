@@ -46,3 +46,12 @@ class cleaning_machine:
                 self.options[i] = locals()[i]
 
         return self
+
+    def run_diagnostic(self):
+        assert (
+            self.with_df == True
+        ), "Please first add a dataframe to the washing machine with .add_df() method."
+
+        diagnosis = self.df.describe()
+        self.diagnosis = diagnosis
+        return diagnosis
