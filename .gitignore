@@ -3,6 +3,9 @@
 *.csv
 *.xlsx
 *.parquet
+test.py
+*.ipynb_checkpoints
+*.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
